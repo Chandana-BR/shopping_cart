@@ -290,5 +290,37 @@
         "count": 145
       }
     }
+  ],
+  "cart": [
+    {
+      "productId": 1,
+      "quantity": 1,
+      "userId": 3,
+      "id": 1
+    },
+    {
+      "productId": 5,
+      "quantity": 1,
+      "userId": 3,
+      "id": 4
+    },
+    {
+      "productId": 3,
+      "quantity": 2,
+      "userId": 3,
+      "id": 6
+    },
+    {
+      "productId": 4,
+      "quantity": 1,
+      "userId": 3,
+      "id": 7
+    },
+    {
+      "productId": 2,
+      "quantity": 2,
+      "userId": 3,
+      "id": 8
+    }
   ]
 }

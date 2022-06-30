@@ -1,13 +1,14 @@
 import React, { memo } from "react";
 import PropTypes from "prop-types";
 
-const Iconbutton = ({ label, children, className }) => {
+const Iconbutton = ({ label, children, className, ...props }) => {
   return (
     <button
       type="button"
       className={`bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white ${
         className || ""
       }`}
+      {...props}
     >
       <span className="sr-only">{label}</span>
       {children}
@@ -17,7 +18,7 @@ const Iconbutton = ({ label, children, className }) => {
 
 Iconbutton.propTypes = {
   label: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
   className: PropTypes.string,
 };
 

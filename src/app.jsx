@@ -1,5 +1,7 @@
 import React, { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
+import { CartProvider } from "./context/cartContext";
+import { ProductProvider } from "./context/productsContext";
 import AuthLayout from "./layouts/authLayout";
 import MainLayout from "./layouts/mainLayout";
 // import Home from "./pages/Home/home";
@@ -19,7 +21,16 @@ const Categories = lazy(() => import("./pages/Categories/categories"));
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<MainLayout />}>
+      <Route
+        path="/"
+        element={
+          <ProductProvider>
+            <CartProvider>
+              <MainLayout />
+            </CartProvider>
+          </ProductProvider>
+        }
+      >
         <Route index element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/favorites" element={<Favorites />} />
